@@ -16,10 +16,10 @@ export const instantiateServer = async (bot: Client) => {
       logger: false,
       https: {
         cert: await readFile(
-          "/etc/letsencrypt/live/oogie.nhcarrigan.com-0001/cert.pem"
+          "/etc/letsencrypt/live/oogie.nhcarrigan.com/cert.pem"
         ),
         key: await readFile(
-          "/etc/letsencrypt/live/oogie.nhcarrigan.com-0001/privkey.pem"
+          "/etc/letsencrypt/live/oogie.nhcarrigan.com/privkey.pem"
         ),
       },
     });
@@ -39,7 +39,7 @@ export const instantiateServer = async (bot: Client) => {
           bot.user?.displayAvatarURL() ??
           "https://cdn.nhcarrigan.com/profile.png",
         content: "Fastify server live on port 1443~!",
-        username: bot.user?.username ?? "Hacktoberfest",
+        username: bot.user?.username ?? "Boost Monitor",
       });
     });
   } catch (err) {
