@@ -28,7 +28,7 @@ export const instantiateServer = async (bot: Client) => {
       res.send("Health check~!");
     });
 
-    server.listen({ port: 1443 }, (err) => {
+    server.listen({ port: 3443 }, (err) => {
       if (err) {
         void errorHandler("start server", err);
         return;
