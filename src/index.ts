@@ -3,6 +3,7 @@ import * as Sentry from "@sentry/node";
 import { Client, GatewayIntentBits, WebhookClient } from "discord.js";
 
 import { manageRoles } from "./modules/manageRoles";
+import { instantiateServer } from "./server/serve";
 import { errorHandler } from "./utils/errorHandler";
 
 Sentry.init({
@@ -43,6 +44,7 @@ Sentry.init({
     });
 
     await bot.login(process.env.DISCORD_TOKEN);
+    await instantiateServer(bot);
   } catch (err) {
     await errorHandler("index", err);
   }
