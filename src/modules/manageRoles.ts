@@ -1,6 +1,6 @@
 import { GuildMember } from "discord.js";
 
-import { boosterRole, colourRoles } from "../config/roles";
+import { colourRoles, qualifiedRoles } from "../config/roles";
 import { errorHandler } from "../utils/errorHandler";
 
 /**
@@ -12,7 +12,7 @@ import { errorHandler } from "../utils/errorHandler";
  */
 export const manageRoles = async (newMember: GuildMember): Promise<void> => {
   try {
-    if (!newMember.roles.cache.has(boosterRole)) {
+    if (!qualifiedRoles.some((role) => newMember.roles.cache.has(role))) {
       for (const roleId of colourRoles) {
         const target = newMember.roles.cache.find((role) => role.id === roleId);
         if (target) {

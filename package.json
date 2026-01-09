@@ -10,10 +10,6 @@
     "start": "node -r dotenv/config prod/index.js",
     "test": "echo 'No tests yet!' && exit 0"
   },
-  "engines": {
-    "node": "22",
-    "pnpm": "9"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nhcarrigan/oogie-woogie-boostie-woostie.git"
