@@ -14,14 +14,6 @@ export const instantiateServer = async (bot: Client) => {
   try {
     const server = fastify({
       logger: false,
-      https: {
-        cert: await readFile(
-          "/etc/letsencrypt/live/oogie.nhcarrigan.com/cert.pem"
-        ),
-        key: await readFile(
-          "/etc/letsencrypt/live/oogie.nhcarrigan.com/privkey.pem"
-        ),
-      },
     });
 
     server.get("/", (_req, res) => {
@@ -30,7 +22,7 @@ export const instantiateServer = async (bot: Client) => {
         <!DOCTYPE html>
 <html>
   <head>
-    <title>Boost Monitor</title>
+    <title>Valerium</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="A bot to remove special roles when someone stops boosting a server." />
@@ -38,14 +30,15 @@ export const instantiateServer = async (bot: Client) => {
   </head>
   <body>
     <main>
-    <h1>Boost Monitor</h1>
+    <h1>Valerium</h1>
     <section>
+    <img src="https://cdn.nhcarrigan.com/new-avatars/valerium-full.png" width="250" alt="Valerium" />
       <p>A bot to remove special roles when someone stops boosting a server.</p>
     </section>
     <section>
         <h2>Links</h2>
         <p>
-            <a href="https://codeberg.org/nhcarrigan/boost-monitor">
+            <a href="https://git.nhcarrigan.com/nhcarrigan/valerium">
                 <i class="fa-solid fa-code"></i> Source Code
             </a>
         </p>
@@ -75,8 +68,8 @@ export const instantiateServer = async (bot: Client) => {
         avatarURL:
           bot.user?.displayAvatarURL() ??
           "https://cdn.nhcarrigan.com/profile.png",
-        content: "Fastify server live on port 1443~!",
-        username: bot.user?.username ?? "Boost Monitor",
+        content: "Fastify server live on port 3443~!",
+        username: bot.user?.username ?? "Valerium",
       });
     });
   } catch (err) {
